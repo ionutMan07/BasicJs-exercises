@@ -24,7 +24,7 @@ if (password.length >= 6) {
 
 // Operator precedence
 
-let x = 7;
+// let x = 7;
 
 // THIS VERSION RETURNS TRUE
 //&& runs before ||
@@ -32,4 +32,30 @@ let x = 7;
 
 // THIS VERSION RETURNS FALSE
 // Use parens to change order
-console.log((x == 7 || x === 3) && x > 10);
+// (x == 7 || x === 3) && x > 10);
+
+// Switch with overlapping cases...
+
+let emoji = "heartd";
+
+switch (emoji) {
+  case "sad face":
+  case "happy face":
+    console.log("yellow");
+    break;
+  case "eggplant":
+    console.log("purple");
+    break;
+  case "heart":
+  case "lips":
+    console.log("red");
+    break;
+  default:
+    console.log("none of them");
+}
+
+//ternary operators
+
+let status = "offline";
+let color = status === "online" ? "green" : "red";
+console.log(color);
