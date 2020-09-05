@@ -1,17 +1,39 @@
-// count the vowels out of a word
+// A pangram is a sentence that contains every letter of the alphabet, like:
+//"The quick brown fox jumps over the lazy dog"
 
-function getCount(str) {
-  var vowelsCount = 0;
+// Write a function called isPangram, which checks to see if a given sentence
+// contains every letter of the alphabet.  Make sure you igore string casing!
 
-  let vowels = ["a", "o", "e", "i", "u"];
-  let stringArray = str.split("");
-  for (let char of stringArray) {
-    // for (let i = 0; i < stringArray.length; i++) {
-    //   let char = stringArray[i];
-    if (vowels.indexOf(char) !== -1) {
-      vowelsCount++;
+// isPangram('The five boxing wizards jump quickly') //true
+// isPangram('The five boxing wizards jump quick') //false
+
+let alphabet = "abcdefghijklmnoprstuvwqxyz";
+let isPangram = function (sentence) {
+  let small = sentence.toLowerCase();
+  for (let char of alphabet) {
+    if (small.indexOf(char) === -1) {
+      console.log(false);
+      return false;
     }
   }
-  console.log(vowelsCount);
-}
-getCount("oopisdfalasd");
+  console.log(true);
+  return true;
+};
+
+isPangram("The five boxing wizards jump quickly");
+
+// second solution with .includes
+
+let alphabett = "abcdefghijklmnoprstuvwqxyz";
+let isPangramm = function (sentencee) {
+  let smalll = sentencee.toLowerCase();
+  for (let charr of alphabett) {
+    if (!smalll.includes(charr)) {
+      console.log(false);
+      return false;
+    }
+  }
+  console.log(true);
+  return true;
+};
+isPangramm("The five boxing wiards jump quickly");
